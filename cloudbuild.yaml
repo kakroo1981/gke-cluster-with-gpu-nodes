@@ -1,6 +1,6 @@
 steps:
 - id: 'branch name'
-  name: 'alpine'
+  name: 'main'
   entrypoint: 'sh'  
   args: 
   - '-c'
@@ -65,7 +65,7 @@ steps:
   - '-c'
   - | 
       if [ -d "$BRANCH_NAME/" ]; then
-        cd environments/$BRANCH_NAME      
+        cd $BRANCH_NAME      
         terraform apply -auto-approve
       else
         echo "***************************** SKIPPING APPLYING *******************************"
